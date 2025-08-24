@@ -6,33 +6,6 @@ interface SkillsSectionProps {
   themeClasses: { [key: string]: string };
 }
 
-// const SkillsSection: React.FC<SkillsSectionProps> = ({ skillsData, themeClasses }) => {
-//   const renderSkills = (title: string, skills: string[]) => (
-//     <div>
-//       <h4 className={`text-md font-semibold ${themeClasses.subtext} font-mono mb-2`}>{title}</h4>
-//       <div className="flex flex-wrap gap-2">
-//         {skills.map((skill, index) => (
-//           <span
-//             key={index}
-//             className={`bg-gray-700 text-white px-2 py-0.5 rounded-full text-xs font-medium dark:bg-gray-300 dark:text-gray-900 `}
-//           >
-//             {skill}
-//           </span>
-//         ))}
-//       </div>
-//     </div>
-//   );
-
-//   return (
-//     <div className="space-y-4">
-//       {renderSkills('Frontend', skillsData.frontend)}
-//       {renderSkills('Backend', skillsData.backend)}
-//       {renderSkills('Databases', skillsData.databases)}
-//       {renderSkills('Tools', skillsData.tools)}
-//     </div>
-//   );
-// };
-
 const SkillsSection: React.FC<SkillsSectionProps> = ({ skillsData, themeClasses }) => {
   const renderSkills = (title: string, skills: any) => (
     <div>
