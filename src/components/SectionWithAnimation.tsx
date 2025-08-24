@@ -1,8 +1,8 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, Ref } from 'react';
 
 const useInView = (options: IntersectionObserverInit) => {
   const ref = useRef<HTMLDivElement>(null);
-  const [inView, setInView] = useState<any>(false);
+  const [inView, setInView] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
@@ -39,7 +39,7 @@ const SectionWithAnimation: React.FC<SectionWithAnimationProps> = ({ children, i
   return (
     <section
       id={id}
-      ref={ref}
+      ref={ref as Ref<HTMLElement> | undefined}
       className={`py-6 md:py-8 border-t ${themeClasses.sectionBorder} font-mono transition-all duration-700 ease-out transform ${
         inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
       }`}

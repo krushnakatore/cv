@@ -7,7 +7,7 @@ interface SkillsSectionProps {
 }
 
 const SkillsSection: React.FC<SkillsSectionProps> = ({ skillsData, themeClasses }) => {
-  const renderSkills = (title: string, skills: any) => (
+  const renderSkills = (title: string, skills:string[]) => (
     <div>
       <h4 className={`text-md font-semibold font-mono ${themeClasses.subtext} mb-2`}>{title}</h4>
       <div className="flex flex-wrap gap-2">
