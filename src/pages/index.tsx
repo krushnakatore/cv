@@ -100,9 +100,9 @@ export default function Home() {
 
           <SectionWithAnimation id="about" title="About" themeClasses={themeClasses}>
             <p className={`text-pretty font-mono text-sm ${themeClasses.subtext}`}>
-              I'm a Senior Software Engineer who loves diving into challenging problems and building strong, scalable solutions. 
-              I'm always looking to learn and improve my skills, and I find a lot of satisfaction in helping my team members grow. 
-              I'm driven to not only solve technical issues but also to make sure the work we do contributes to the bigger picture.
+              I&apos;m a Senior Software Engineer who loves diving into challenging problems and building strong, scalable solutions. 
+              I&apos;m always looking to learn and improve my skills, and I find a lot of satisfaction in helping my team members grow. 
+              I&apos;m driven to not only solve technical issues but also to make sure the work we do contributes to the bigger picture.
             </p>
           </SectionWithAnimation>
 
