@@ -112,7 +112,7 @@ export interface Project {
   
   export const skillsData: Skills = {
     frontend: ['HTML', 'CSS', 'TypeScript', 'React JS', 'Next JS', 'BootStrap', 'Tailwind CSS', 'CleverTap', 'Antd', 'Jest', 'Cypress'],
-    backend: ['Node JS', 'Express JS', 'Kotlin', 'REST APIs','Nest JS', 'Firebase', 'Graph QL'],
+    backend: ['Node JS', 'Express JS', 'Kotlin', 'REST APIs','Nest JS', 'Firebase', 'Graph QL', 'Kafka', 'Redis'],
     databases: ['MongoDB', 'PostgreSQL', 'MySQL'],
-    tools: ['Git', 'Docker', 'AWS', 'Vercel', 'Figma', 'GCP', 'Git Lab', 'Jira'],
+    tools: ['Claude', 'GitHub-Copilot', 'Cursor', 'Git', 'Camunda', 'Docker', 'AWS', 'Vercel', 'Figma', 'GCP', 'Git Lab', 'Jira'],
   };
