@@ -35,11 +35,11 @@ export interface Project {
   
   export const projectsData: Project[] = [
     {
-      title: 'Twitter Clone',
-      description: 'Replica of Twitter aka X, to send images and videos to your close friends.',
-      technologies: ['React JS', 'Tailwind CSS', 'Node JS', 'Mongo DB', 'Express JS', 'TypeScript', 'Firebase'],
-      githubUrl: 'https://github.com/krushnakatore/twitterfrontend',
-      liveUrl: 'https://twitterfrontend.vercel.app/',
+      title: 'Fitness Website',
+      description: 'A modern fitness platform where users can explore gym services, membership plans, trainers, classes, and the latest updates—all in one place.',
+      technologies: ['Next JS', 'Tailwind CSS', 'Node JS', 'Mongo DB', 'Express JS', 'TypeScript'],
+      githubUrl: 'https://github.com/krushnakatore/fitness_freak',
+      liveUrl: 'https://fitness-freak-drab.vercel.app/',
     },
     // {
     //   title: 'Portfolio Website',
@@ -49,11 +49,11 @@ export interface Project {
     //   liveUrl: '#',
     // },
     {
-      title: 'E-commerce Website',
-      description: 'A RESTful API for an e-commerce platform with user authentication, product management, and order processing.',
-      technologies: ['Express.js', 'MongoDB', 'JWT', 'Node JS', 'Paypal',],
-      githubUrl: 'https://github.com/krushnakatore/ecomfrontend',
-      liveUrl: 'https://ecomfrontend-eofr.vercel.app/',
+      title: 'A Modern Packaging & Printing Solutions Website',
+      description: 'A responsive website showcasing packaging and printing services, product catalogs, custom packaging solutions, company information, and customer inquiry features for businesses.',
+      technologies: ['Next JS', 'Nest JS', 'Express.js', 'MongoDB', 'Tailwind CSS'],
+      githubUrl: 'https://github.com/krushnakatore/packaging_printing',
+      liveUrl: 'https://packaging-printing.vercel.app/',
     },
     // {
     //   title: 'Weather Dashboard',
