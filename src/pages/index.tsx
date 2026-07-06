@@ -83,7 +83,7 @@ export default function Home() {
                   </a>
                 </div>
                 <div className="flex gap-x-1 pt-1 font-mono text-sm">
-                  <a href="https://drive.google.com/file/d/1hjwCeg57PBqeIq-8mJ1vHwMSQOdWplvG/view?usp=sharing" target="_blank" rel="noopener noreferrer" className={`${themeClasses.link} flex items-center gap-x-1`}>
+                  <a href="https://drive.google.com/file/d/1hjwCeg57PBqeIq-8mJ1vHwMSQOdWplvG/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className={`${themeClasses.link} flex items-center gap-x-1`}>
                     <Download size={12} />
                      Resume
                   </a>
