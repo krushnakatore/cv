@@ -90,11 +90,11 @@ export default function Home() {
                 </div>
                 
               </div>
-              {/* <img
+              <img
                 src="/pp1.jpg"
                 alt="Profile picture"
                 className="size-50 rounded-full object-cover"
-              /> */}
+               />
             </div>
           </SectionWithAnimation>
 
