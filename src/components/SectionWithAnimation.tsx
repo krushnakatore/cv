@@ -1,50 +1,53 @@
-import React, { useRef, useEffect, useState, Ref } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
+import { ui } from '../styles/ui';
 
-const useInView = (options: IntersectionObserverInit) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const [inView, setInView] = useState(false);
+// 'visible' is the default, so content shows without JS, when printing, and for reduced-motion users.
+// Sections still below the fold are hidden on mount and faded in when they scroll into view.
+type RevealState = 'visible' | 'hidden' | 'revealed';
+
+const useReveal = () => {
+  const ref = useRef<HTMLElement>(null);
+  const [state, setState] = useState<RevealState>('visible');
 
   useEffect(() => {
+    const el = ref.current;
+    if (!el || !('IntersectionObserver' in window)) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (el.getBoundingClientRect().top < window.innerHeight) return;
+
+    setState('hidden');
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
-        setInView(true);
+        setState('revealed');
         observer.disconnect();
       }
-    }, options);
+    }, { threshold: 0.1 });
+    observer.observe(el);
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+    return () => observer.disconnect();
+  }, []);
 
-    return () => {
-      if (observer) {
-        observer.disconnect();
-      }
-    };
-  }, [options]);
-
-  return [ref, inView];
+  return [ref, state] as const;
 };
 
 interface SectionWithAnimationProps {
   children: React.ReactNode;
   id?: string;
   title?: string;
-  themeClasses: { [key: string]: string };
 }
 
-const SectionWithAnimation: React.FC<SectionWithAnimationProps> = ({ children, id, title, themeClasses }) => {
-  const [ref, inView] = useInView({ threshold: 0.1 });
+const SectionWithAnimation: React.FC<SectionWithAnimationProps> = ({ children, id, title }) => {
+  const [ref, state] = useReveal();
 
   return (
     <section
       id={id}
-      ref={ref as Ref<HTMLElement> | undefined}
-      className={`py-6 md:py-8 border-t ${themeClasses.sectionBorder} font-mono transition-all duration-700 ease-out transform ${
-        inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+      ref={ref}
+      className={`py-6 md:py-8 border-t ${ui.border} font-mono transition-all duration-700 ease-out print:translate-y-0 print:opacity-100 ${
+        state === 'hidden' ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
       }`}
     >
-      {title && <h2 className={`text-xl font-bold mb-4 ${themeClasses.heading}`}>{title}</h2>}
+      {title && <h2 className={`text-xl font-bold mb-4 ${ui.heading}`}>{title}</h2>}
       <div className="space-y-4">
         {children}
       </div>
