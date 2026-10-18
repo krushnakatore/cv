@@ -1,5 +1,5 @@
 {
-  "name": "my-app",
+  "name": "krushna-katore-portfolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.6.1",
     "lucide-react": "^0.541.0",
     "next": "^15.5.18",
     "react": "19.1.0",
