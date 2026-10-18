@@ -35,11 +35,11 @@ export interface Project {
   
   export const projectsData: Project[] = [
     {
-      title: 'Twitter Clone',
-      description: 'Replica of Twitter aka X, to send images and videos to your close friends.',
-      technologies: ['React JS', 'Tailwind CSS', 'Node JS', 'Mongo DB', 'Express JS', 'TypeScript', 'Firebase'],
-      githubUrl: 'https://github.com/krushnakatore/twitterfrontend',
-      liveUrl: 'https://twitterfrontend.vercel.app/',
+      title: 'Fitness Website',
+      description: 'A modern fitness platform where users can explore gym services, membership plans, trainers, classes, and the latest updates—all in one place.',
+      technologies: ['Next JS', 'Tailwind CSS', 'Node JS', 'Mongo DB', 'Express JS', 'TypeScript'],
+      githubUrl: 'https://github.com/krushnakatore/fitness_freak',
+      liveUrl: 'https://fitness-freak-drab.vercel.app/',
     },
     // {
     //   title: 'Portfolio Website',
@@ -49,11 +49,11 @@ export interface Project {
     //   liveUrl: '#',
     // },
     {
-      title: 'E-commerce Website',
-      description: 'A RESTful API for an e-commerce platform with user authentication, product management, and order processing.',
-      technologies: ['Express.js', 'MongoDB', 'JWT', 'Node JS', 'Paypal',],
-      githubUrl: 'https://github.com/krushnakatore/ecomfrontend',
-      liveUrl: 'https://ecomfrontend-eofr.vercel.app/',
+      title: 'A Modern Packaging & Printing Solutions Website',
+      description: 'A responsive website showcasing packaging and printing services, product catalogs, custom packaging solutions, company information, and customer inquiry features for businesses.',
+      technologies: ['Next JS', 'Nest JS', 'Express.js', 'MongoDB', 'Tailwind CSS'],
+      githubUrl: 'https://github.com/krushnakatore/packaging_printing',
+      liveUrl: 'https://packaging-printing.vercel.app/',
     },
     // {
     //   title: 'Weather Dashboard',
@@ -76,7 +76,7 @@ export interface Project {
       role: 'Software Engineer',
       company: 'Calfus Technologies Pvt. Ltd.',
       years: 'Jun 2023 - Present',
-      description: ['Designed and implemented intricate UI elements to enhance customer experience.', 'Ensured project consistency by leveraging existing components and structures.', 'Resolved React and Nest production bugs promptly.', 'Developed comprehensive test suites using Cypress and Jest unit tests.', 'Optimized Redux and Context for efficient state management.', 'Contributed to backend development, crafting APIs and SQL queries.', 'Collaborated on a new backend service using NestJS.', 'Addressed configuration issues like CORS.', 'Utilized Kotlin to troubleshoot and resolve production bugs.', 'Engaged with clients to understand requirements and deliver desired outcomes.'],
+      description: ['Worked on Kafka-driven middleware services; diagnosed and resolved complex distributed race conditions using GCP logs.', 'Led critical upgrades of core enterprise applications (React 16 to 19 and Node 14 to 22), enhancing performance and security.', 'Streamlined microfrontend flows for faster loading and optimized Camunda workflow re-triggering for high resiliency.', 'Developed comprehensive test suites using Cypress and Jest unit tests.', 'Contributed to backend development, crafting APIs and SQL queries.', 'Engineered critical backend integrations with Twilio and WorkBright, collaborating directly with external developer teams to architect robust callback/webhook handlers.', 'Fast-tracked system performance via SQL query optimization.', 'Developed backend microservices in NestJS and Kotlin, aligning closely with clients to translate business needs into technical solutions.', 'Utilized Kotlin to troubleshoot and resolve production bugs.', 'Engaged with clients to understand requirements and deliver desired outcomes.'],
       skills: ['JavaScript', 'React', 'Node.js', 'AWS', 'Docker']
     },
     {
@@ -112,7 +112,7 @@ export interface Project {
   
   export const skillsData: Skills = {
     frontend: ['HTML', 'CSS', 'TypeScript', 'React JS', 'Next JS', 'BootStrap', 'Tailwind CSS', 'CleverTap', 'Antd', 'Jest', 'Cypress'],
-    backend: ['Node JS', 'Express JS', 'Kotlin', 'REST APIs','Nest JS', 'Firebase', 'Graph QL'],
+    backend: ['Node JS', 'Express JS', 'Kotlin', 'REST APIs','Nest JS', 'Firebase', 'Graph QL', 'Kafka', 'Redis'],
     databases: ['MongoDB', 'PostgreSQL', 'MySQL'],
-    tools: ['Git', 'Docker', 'AWS', 'Vercel', 'Figma', 'GCP', 'Git Lab', 'Jira'],
+    tools: ['Claude', 'GitHub-Copilot', 'Cursor', 'Git', 'Camunda', 'Docker', 'AWS', 'Vercel', 'Figma', 'GCP', 'Git Lab', 'Jira'],
   };
