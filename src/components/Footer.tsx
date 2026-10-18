@@ -8,8 +8,8 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ links }) => {
   return (
-    <footer className={`border-t ${ui.border} font-mono`}>
-      <div className="mx-auto w-full max-w-3xl space-y-4 px-4 py-8 text-sm sm:px-6">
+    <footer className={`border-t ${ui.border} px-4 font-mono sm:px-6 md:px-16`}>
+      <div className="mx-auto w-full max-w-3xl space-y-4 py-8 text-sm">
         <p className="flex items-center gap-2">
           <span className="relative flex size-2.5">
             <span className="absolute inline-flex h-full w-full motion-safe:animate-ping rounded-full bg-green-400 opacity-75" />

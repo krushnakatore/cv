@@ -43,7 +43,7 @@ const SectionWithAnimation: React.FC<SectionWithAnimationProps> = ({ children, i
     <section
       id={id}
       ref={ref}
-      className={`py-6 md:py-8 border-t ${ui.border} font-mono transition-all duration-700 ease-out print:translate-y-0 print:opacity-100 ${
+      className={`py-6 md:py-8 border-t first:border-t-0 ${ui.border} font-mono transition-all duration-700 ease-out print:translate-y-0 print:opacity-100 ${
         state === 'hidden' ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
       }`}
     >

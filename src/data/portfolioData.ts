@@ -86,7 +86,7 @@ export interface CaseStudy {
 
   export const experienceData: Experience[] = [
     {
-      role: 'Software Engineer',
+      role: 'Senior Software Engineer',
       company: 'Calfus Pvt. Ltd.',
       years: 'Jun 2023 - Present',
       description: [
