@@ -2,30 +2,47 @@ import React, { useEffect, useState } from 'react';
 import { Sun, Moon, Menu, X } from 'lucide-react';
 import { ui } from '../styles/ui';
 
-const navItems = ['about', 'experience', 'projects', 'education', 'certifications', 'skills', 'achievements'];
+const navItems = ['about', 'experience', 'projects', 'education', 'skills'];
+
+// Sections without their own nav link count as the nav item they sit under
+const sectionToNavItem: Record<string, string> = {
+  about: 'about',
+  experience: 'experience',
+  projects: 'projects',
+  education: 'education',
+  certifications: 'education',
+  skills: 'skills',
+  achievements: 'skills',
+};
 
 const label = (item: string) => item.charAt(0).toUpperCase() + item.slice(1);
 
-// Tracks which section is currently in the middle band of the screen
+// Highlights the last section whose top has scrolled up to just below the sticky navbar
 const useActiveSection = () => {
   const [active, setActive] = useState('');
 
   useEffect(() => {
-    const sections = navItems
+    const sections = Object.keys(sectionToNavItem)
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => el !== null);
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActive(entry.target.id);
-        });
-      },
-      { rootMargin: '-40% 0px -55% 0px' }
-    );
-    sections.forEach((section) => observer.observe(section));
+    const update = () => {
+      const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+      let current = '';
+      for (const section of sections) {
+        if (section.getBoundingClientRect().top <= 100) current = section.id;
+      }
+      if (atBottom && sections.length) current = sections[sections.length - 1].id;
+      setActive(current ? sectionToNavItem[current] : '');
+    };
 
-    return () => observer.disconnect();
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    return () => {
+      window.removeEventListener('scroll', update);
+      window.removeEventListener('resize', update);
+    };
   }, []);
 
   return active;
@@ -54,14 +71,14 @@ const Navbar: React.FC<NavbarProps> = ({ isMobileMenuOpen, setIsMobileMenuOpen, 
 
   return (
     <nav className={`${ui.card} border-b ${ui.border} font-mono sticky top-0 z-50 transition-colors duration-500`}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-        <div className="flex justify-between items-center h-16">
+      <div className="px-4 sm:px-6 md:px-16">
+        <div className="mx-auto flex h-16 max-w-3xl items-center justify-between">
           <a href="#top" className="flex-shrink-0 text-xl font-bold tracking-tight" aria-label="Back to top">
             KK
           </a>
 
           {/* Desktop menu and theme toggle */}
-          <div className="hidden lg:flex items-center space-x-1">
+          <div className="-mr-2 hidden md:flex items-center space-x-1">
             {navItems.map((item) => (
               <a
                 key={item}
@@ -82,7 +99,7 @@ const Navbar: React.FC<NavbarProps> = ({ isMobileMenuOpen, setIsMobileMenuOpen, 
           </div>
 
           {/* Mobile menu button */}
-          <div className="-mr-2 flex items-center lg:hidden">
+          <div className="-mr-2 flex items-center md:hidden">
             <button
               onClick={toggleTheme}
               className={`p-2 rounded-full transition-colors duration-200 ${ui.link} mr-2`}
@@ -103,8 +120,8 @@ const Navbar: React.FC<NavbarProps> = ({ isMobileMenuOpen, setIsMobileMenuOpen, 
       </div>
 
       {/* Mobile menu panel */}
-      <div className={`${isMobileMenuOpen ? 'block' : 'hidden'} lg:hidden`}>
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <div className={`${isMobileMenuOpen ? 'block' : 'hidden'} md:hidden`}>
+        <div className="px-1 pt-2 pb-3 space-y-1 sm:px-3">
           {navItems.map((item) => (
             <a
               key={item}

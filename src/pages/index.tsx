@@ -17,15 +17,15 @@ import { CertificationsEntry } from '@/components/CertificationsEntry';
 const SITE_URL = 'https://krushna-katore-portfolio.vercel.app';
 const RESUME_URL = '/resume.pdf';
 
-const META_TITLE = 'Krushna Katore | Software Engineer';
-const META_DESCRIPTION = 'Software Engineer with 5+ years in full-stack development (React, Node.js, NestJS), building AI agents for incident response and engineering prioritization.';
+const META_TITLE = 'Krushna Katore | Senior Software Engineer';
+const META_DESCRIPTION = 'Senior Software Engineer with 5+ years in full-stack development (React, Node.js, NestJS), building AI agents for incident response and engineering prioritization.';
 
 // Structured data so search engines can show a proper profile result
 const personJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Krushna Katore',
-  jobTitle: 'Software Engineer',
+  jobTitle: 'Senior Software Engineer',
   url: SITE_URL,
   image: `${SITE_URL}/og.jpg`,
   email: 'mailto:krushnakatore88@gmail.com',
@@ -89,7 +89,7 @@ export default function Home() {
               <div className="min-w-0 flex-1">
                 <h1 className={`text-2xl font-bold sm:text-3xl ${ui.heading}`}>Krushna Katore</h1>
                 <p className={`mt-2 max-w-md text-pretty font-mono text-sm ${ui.subtext}`}>
-                  Software Engineer · Full Stack & AI Agents
+                  Senior Software Engineer · Full Stack & AI Agents
                 </p>
                 <div className="mt-5 space-y-2.5 font-mono text-sm">
                   {contactLinks.map(({ href, icon: Icon, label, external }) => (
@@ -118,13 +118,14 @@ export default function Home() {
 
           <SectionWithAnimation id="about" title="About">
             <p className={`text-pretty font-mono text-sm ${ui.subtext}`}>
-              Software Engineer with 5+ years of experience in full-stack development (React, Node.js, NestJS) and recent
-              experience building AI agents for incident response and engineering prioritization.
+              I&apos;m a Senior Software Engineer with 5+ years of building full-stack products in React, Node.js and NestJS.
+              Lately I&apos;ve been building AI agents that catch production errors and raise fixes on their own, and
+              that help my team decide what to work on each day.
             </p>
             <p className={`text-pretty font-mono text-sm ${ui.subtext}`}>
-              Skilled in Kafka-based services, GCP, Jira and Temporal workflows, with a strong focus on reliable,
-              well-tested systems. I enjoy turning messy operational problems into automated workflows, leading
-              large upgrades, and helping teammates grow.
+              I love digging into messy problems, like distributed race conditions or Kafka death loops, and turning
+              them into reliable, well-tested systems. I&apos;m always learning, I enjoy helping teammates grow, and I
+              care that what we build actually moves the bigger picture forward.
             </p>
           </SectionWithAnimation>
 
